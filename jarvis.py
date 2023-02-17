@@ -119,7 +119,7 @@ if __name__ == "__main__":
                 speak('Searching on Google...')
                 query = query.replace("google", "")
                 speak("According to Google")
-                for result in search(query, tld="co.in", num=10, stop=10, pause=2):
+                for result in search(query, tld="com", num=10, stop=10, pause=2):
                     print(result)
                     speak(result)
                 
