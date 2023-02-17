@@ -106,8 +106,9 @@ if __name__ == "__main__":
             print('Searching on Wikipedia...')
             speak('Searching on Wikipedia...')
             query = query.replace("wikipedia", "")
-            results = wikipedia.summary(query, sentences=9)
+            results = wikipedia.summary(query, sentences=5)
             speak("According to Wikipedia")
+            webbrowser.get('windows-default').open(results)
             print(results)
             speak(results)
 
@@ -119,9 +120,10 @@ if __name__ == "__main__":
                 speak('Searching on Google...')
                 query = query.replace("google", "")
                 speak("According to Google")
-                for result in search(query, tld="com", num=10, stop=10, pause=2):
-                    print(result)
-                    speak(result)
+                for result in search(query, tld="com", num=10, stop=5, pause=2):
+                    # print(result)
+                    # speak(result)
+                    webbrowser.get('windows-default').open(result)
                 
             except ImportError as e:
                 print(e)
