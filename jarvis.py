@@ -181,8 +181,8 @@ if __name__ == "__main__":
             webbrowser.get('windows-default').open('https://linkedin.com')
 
 
-        # Opens Brave Browser from system directory
-        elif 'open brave' in query:
+        # Opens Brave Browser from system directory as brave is my system default browser and you can change as per your system browser
+        elif 'open browser' in query:
             brave = "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"
             os.startfile(brave)
         
@@ -225,7 +225,7 @@ if __name__ == "__main__":
             detection_stopped_time = None
             timer_started = False
 
-            SECONDS_TO_RECORD_AFTER_DETECTION = 5
+            SECONDS_TO_RECORD_AFTER_DETECTION = 3
 
             frame_size = (int(cap.get(3)), int(cap.get(4)))
             # fourcc -> 4 Character Code with defining the file format
