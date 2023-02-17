@@ -16,6 +16,7 @@ import webbrowser
 import os
 import smtplib
 import cv2
+from googlesearch import search
 # from googleapiclient.discovery import build
 # from google_auth_oauthlib.flow import InstalledAppFlow
 # from google.auth.transport.requests import Request
@@ -102,7 +103,8 @@ if __name__ == "__main__":
         
         # By speaking  your query along with according to wikipedia, query will be searched over wikipedia and your ansers will be well spoken and also printyed on the terminal
         if 'wikipedia' in query:
-            speak("Searching on Wikipedia...")
+            print('Searching on Wikipedia...')
+            speak('Searching on Wikipedia...')
             query = query.replace("wikipedia", "")
             results = wikipedia.summary(query, sentences=9)
             speak("According to Wikipedia")
@@ -110,6 +112,25 @@ if __name__ == "__main__":
             speak(results)
 
 
+        elif 'google' in query:
+            try:
+                # to search
+                print('Searching on Google...')
+                speak('Searching on Google...')
+                query = query.replace("google", "")
+                speak("According to Google")
+                for result in search(query, tld="co.in", num=10, stop=10, pause=2):
+                    print(result)
+                    speak(result)
+                
+            except ImportError as e:
+                print(e)
+                print("No module named 'google' found")
+                speak("No module named 'google' found")
+            
+            
+
+        
         elif 'thank you' in query:
             print("Your's Welcome sir. Have a nice time sir.")
             speak("Your's Welcome sir. Have a nice time sir.")
