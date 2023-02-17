@@ -330,8 +330,8 @@ if __name__ == "__main__":
                 speak("Done sir.")
 
             else :
-                print("Could not open video device")
-                speak("Could not open video device")
+                print("Could not open camera device for a picture")
+                speak("Could not open camera device for a picture")
         
 
 
